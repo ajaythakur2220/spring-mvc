@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2013 VocaLink Ltd -->
+<weblogic-web-app
+        xmlns="http://www.bea.com/ns/weblogic/weblogic-web-app"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.bea.com/ns/weblogic/weblogic-web-app weblogic-web-app.xsd">
+
+    <description>SEVE POC</description>
+
+    <container-descriptor>
+        <!-- Ensure application libraries/classes take precedence on classpath before Weblogic libraries -->
+        <prefer-web-inf-classes>true</prefer-web-inf-classes>
+    </container-descriptor>
+
+</weblogic-web-app>

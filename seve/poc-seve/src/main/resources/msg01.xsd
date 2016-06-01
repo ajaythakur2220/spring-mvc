@@ -1,0 +1,328 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="urn:cccc:tech:xsd:ics.msg01.001" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="MSG01PmtSubm">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="GrpHdr">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element type="xs:string" name="MsgId"/>
+                            <xs:element type="xs:dateTime" name="CreDtTm"/>
+                            <xs:element type="xs:byte" name="NbOfTxs"/>
+                            <xs:element name="SttlmInf">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="SttlmMtd"/>
+                                        <xs:element name="ClrSys">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="Prtry"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="InstgAgt">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="FinInstnId">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ClrSysMmbId">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="ClrSysId">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="Prtry"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element type="xs:int" name="MmbId"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="PstlAdr">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="Dept"/>
+                                                                <xs:element type="xs:string" name="SubDept"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="DrctDbtTxInf" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="PmtId">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="EndToEndId"/>
+                                        <xs:element type="xs:integer" name="TxId"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="PmtTpInf">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="LclInstrm">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:string" name="Prtry"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="IntrBkSttlmAmt">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:float">
+                                            <xs:attribute type="xs:string" name="Ccy" use="optional"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element type="xs:string" name="ChrgBr"/>
+                            <xs:element name="Cdtr">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="Nm"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="CdtrAcct">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Id">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Othr">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="Id"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="CdtrAgt">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="FinInstnId">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ClrSysMmbId">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="ClrSysId">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="Cd"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element type="xs:int" name="MmbId"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="Dbtr">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element type="xs:string" name="Nm"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="DbtrAcct">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Id">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Othr">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element type="xs:string" name="Id"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="DbtrAgt">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="FinInstnId">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="ClrSysMmbId">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="ClrSysId">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="Cd"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element type="xs:int" name="MmbId"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="SplmtryData">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Envlp">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="SupTx">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="SupTxCmn">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="OnUs"/>
+                                                                            <xs:element type="xs:byte" name="TrncCd"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="SupTxCdt" minOccurs="0">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="VrtlCdt"/>
+                                                                            <xs:element type="xs:string" name="RefDat"/>
+                                                                            <xs:element name="NFnddAmt">
+                                                                                <xs:complexType>
+                                                                                    <xs:simpleContent>
+                                                                                        <xs:extension base="xs:float">
+                                                                                            <xs:attribute type="xs:string" name="Ccy"/>
+                                                                                        </xs:extension>
+                                                                                    </xs:simpleContent>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                            <xs:element type="xs:byte" name="NbOfDbt"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="SupTxDbt" minOccurs="0">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="RprsntdTx"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="SupAddFrdInf" minOccurs="0">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:date" name="FrstChqDt"/>
+                                                                            <xs:element type="xs:date" name="LstChqDt"/>
+                                                                            <xs:element type="xs:byte" name="NmbrCntprts"/>
+                                                                            <xs:element type="xs:short" name="NmbrGdChq"/>
+                                                                            <xs:element type="xs:byte" name="NmbrFrdChq"/>
+                                                                            <xs:element name="MxAmt">
+                                                                                <xs:complexType>
+                                                                                    <xs:simpleContent>
+                                                                                        <xs:extension base="xs:float">
+                                                                                            <xs:attribute type="xs:string" name="Ccy"/>
+                                                                                        </xs:extension>
+                                                                                    </xs:simpleContent>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                            <xs:element type="xs:byte" name="RskInd"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="SupTxRp">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="SrtCdRp"/>
+                                                                            <xs:element type="xs:string" name="ActNmrRp"/>
+                                                                            <xs:element type="xs:string" name="AmtRp"/>
+                                                                            <xs:element type="xs:string" name="SrlNmRp"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="SupTxDflt">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="SrtCdDflt"/>
+                                                                            <xs:element type="xs:string" name="ActNmrDflt"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="SupImages" minOccurs="0">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element type="xs:string" name="AttTyp"/>
+                                                                            <xs:element type="xs:string" name="Attachment"/>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="SplmtryData">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Envlp">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="SupTSetDtls">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element type="xs:short" name="Src"/>
+                                                    <xs:element type="xs:string" name="FrdOnly"/>
+                                                    <xs:element type="xs:string" name="SbmtChnnl"/>
+                                                    <xs:element type="xs:string" name="ChnlDesc"/>
+                                                    <xs:element type="xs:string" name="CllctBr"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
